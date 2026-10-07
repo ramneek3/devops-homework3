@@ -1,8 +1,8 @@
 # Networking Fundamentals: Homework (Session 4)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 
 **Task 1:** practise the commands and repos shared in the devops-hero GitHub repo.
 **Task 2:** create a Markdown file, run the networking commands, add the output, and explain what I understood about each command.

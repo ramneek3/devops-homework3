@@ -1,8 +1,8 @@
 # Helm: Homework (Session 15)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 
 > Every command below was actually executed and the output pasted verbatim.
 > My chart: [`notes-chart/`](notes-chart/) · Assignment: [`session-15-helm/mini-project`](../../session-15-helm/mini-project/README.md)

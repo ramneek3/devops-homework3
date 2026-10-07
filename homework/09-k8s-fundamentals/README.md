@@ -1,8 +1,8 @@
 # Kubernetes Fundamentals: Homework (Session 9)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 
 > Every command below was actually executed and the output pasted verbatim.
 > Session resources: [`session9-k8s/Readme.md`](../../session9-k8s/Readme.md)

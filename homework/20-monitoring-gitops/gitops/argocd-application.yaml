@@ -9,7 +9,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/Talin12/devops-heros.git
+    repoURL: https://github.com/ramneek3/devops-homework3.git
     targetRevision: main
     path: homework/20-monitoring-gitops/gitops/app
 

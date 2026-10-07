@@ -1,8 +1,8 @@
 # Monitoring, Observability & GitOps: Homework (Session 20)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 
 > Every command below was actually executed and the output pasted verbatim. Screenshots are real
 > browser captures of the running stack.
@@ -116,7 +116,7 @@ alert in `pending`, not `firing`, so it doesn't page anyone over a single blip.
 ## Part B: GitOps with Argo CD
 
 ```text
-  git push ──► github.com/Talin12/devops-heros
+  git push ──► github.com/ramneek3/devops-homework3
                  homework/20-monitoring-gitops/gitops/app/   ◄── desired state
                          │  polled by
                          ▼

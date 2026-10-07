@@ -16,7 +16,7 @@ provider "aws" {
     tags = {
       Session   = "19"
       ManagedBy = "Terraform"
-      Owner     = "talin-daga"
+      Owner     = "ramneek-singh"
     }
   }
 }

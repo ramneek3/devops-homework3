@@ -1,8 +1,8 @@
 # Shell Scripting: Homework (Session 3)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 
 **Task:** write a System Information Script that prints the date, hostname, username, disk usage and
 running processes, uses variables, takes input with `read -p`, creates a directory with `mkdir`,
@@ -36,7 +36,7 @@ Script: [`system_info.sh`](system_info.sh)
 # ---------------------------------------------------------------
 # System Information Script
 # Session 3 - Shell Scripting Homework
-# Author : Talin Daga
+# Author : Ramneek Singh
 # ---------------------------------------------------------------
 # Demonstrates: variables, read -p, mkdir, touch, echo, date,
 #               hostname, whoami, df, ps and > output redirection
@@ -111,7 +111,7 @@ echo "==============================================="
 ## How to run it
 
 ```bash
-git clone https://github.com/Talin12/devops-heros.git
+git clone https://github.com/ramneek3/devops-homework3.git
 cd devops-heros/homework/02-shell-scripting
 
 chmod +x system_info.sh      # make it executable

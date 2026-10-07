@@ -1,8 +1,8 @@
 # Kubernetes Storage, HPA & Probes: Homework (Session 13)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 
 > Every command below was actually executed and the output pasted verbatim.
 > Manifests: [`session-13-storage-hpa-probes/`](../../session-13-storage-hpa-probes/)
@@ -33,8 +33,8 @@
 $ kubectl apply -f 01-volumes/emptydir-pod.yaml
 pod/emptydir-demo created
 
-$ kubectl exec emptydir-demo -- sh -c 'echo "written at $(date -u +%H:%M:%S) by Talin" > /data/message.txt && cat /data/message.txt'
-written at 12:08:48 by Talin
+$ kubectl exec emptydir-demo -- sh -c 'echo "written at $(date -u +%H:%M:%S) by Ramneek" > /data/message.txt && cat /data/message.txt'
+written at 12:08:48 by Ramneek
 ```
 
 First I killed only the **container** (stopping nginx makes PID 1 exit, kubelet restarts it in the same pod):
@@ -48,7 +48,7 @@ NAME            READY   STATUS    RESTARTS     AGE
 emptydir-demo   1/1     Running   1 (8s ago)   9s
 
 $ kubectl exec emptydir-demo -- cat /data/message.txt
-written at 12:08:48 by Talin
+written at 12:08:48 by Ramneek
 ```
 
 `RESTARTS 1` and the file is still there. Then I deleted the **pod**:
@@ -168,8 +168,8 @@ PV that is *at least* as big, and the whole PV goes to that one claim.
 ### Data survives pod deletion
 
 ```console
-$ kubectl exec storage-demo -- sh -c 'echo "Student: Talin Daga" > /data/message.txt; cat /data/message.txt'
-Student: Talin Daga
+$ kubectl exec storage-demo -- sh -c 'echo "Student: Ramneek Singh" > /data/message.txt; cat /data/message.txt'
+Student: Ramneek Singh
 
 $ kubectl delete pod storage-demo
 pod "storage-demo" deleted from default namespace
@@ -178,10 +178,10 @@ $ kubectl apply -f 02-persistent-storage/pod.yaml
 pod/storage-demo created
 
 $ kubectl exec storage-demo -- cat /data/message.txt
-Student: Talin Daga
+Student: Ramneek Singh
 
 $ minikube ssh -- cat /tmp/student-data/message.txt
-Student: Talin Daga
+Student: Ramneek Singh
 ```
 
 ## 4. `Retain` reclaim policy
@@ -198,7 +198,7 @@ NAME         CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS     CLAIM        
 student-pv   1Gi        RWO            Retain           Released   default/student-pvc                  <unset>                          17s
 
 $ minikube ssh -- cat /tmp/student-data/message.txt
-Student: Talin Daga
+Student: Ramneek Singh
 ```
 
 The claim is gone and the data is still on disk. The PV goes to `Released`, **not** `Available`. It
@@ -369,9 +369,9 @@ has a number (it changes to `1%` in the load-test log below).
 ### Task 1: storage persistence
 
 ```console
-$ POD_NAME=$(kubectl get pods -n production-webapp -l app=web-app -o jsonpath='{.items[0].metadata.name}'); echo $POD_NAME; kubectl exec -n production-webapp $POD_NAME -- sh -c 'echo "Student: Talin Daga (24BCS10321)" > /data/student.txt'; kubectl exec -n production-webapp $POD_NAME -- cat /data/student.txt; kubectl delete pod -n production-webapp $POD_NAME
+$ POD_NAME=$(kubectl get pods -n production-webapp -l app=web-app -o jsonpath='{.items[0].metadata.name}'); echo $POD_NAME; kubectl exec -n production-webapp $POD_NAME -- sh -c 'echo "Student: Ramneek Singh (24BCS10141)" > /data/student.txt'; kubectl exec -n production-webapp $POD_NAME -- cat /data/student.txt; kubectl delete pod -n production-webapp $POD_NAME
 web-app-d45775485-rkcpk
-Student: Talin Daga (24BCS10321)
+Student: Ramneek Singh (24BCS10141)
 pod "web-app-d45775485-rkcpk" deleted from production-webapp namespace
 
 $ kubectl get pods -n production-webapp
@@ -380,8 +380,8 @@ web-app-d45775485-pk9b4   1/1     Running   0          9s
 web-app-d45775485-xvlth   1/1     Running   0          64s
 
 $ for p in $(kubectl get pods -n production-webapp -l app=web-app -o name); do echo "$p: $(kubectl exec -n production-webapp $p -- cat /data/student.txt)"; done
-pod/web-app-d45775485-pk9b4: Student: Talin Daga (24BCS10321)
-pod/web-app-d45775485-xvlth: Student: Talin Daga (24BCS10321)
+pod/web-app-d45775485-pk9b4: Student: Ramneek Singh (24BCS10141)
+pod/web-app-d45775485-xvlth: Student: Ramneek Singh (24BCS10141)
 ```
 
 The replacement pod `pk9b4` sees the file. So does the *other* replica `xvlth`, even though the

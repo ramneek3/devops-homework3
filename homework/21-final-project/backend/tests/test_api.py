@@ -28,7 +28,7 @@ def test_create_rejects_empty_title():
     assert response.status_code == 422
 
 def test_task_crud_lifecycle():
-    created = client.post("/api/tasks", json={"title": "Write README", "assignee": "Talin"}).json()
+    created = client.post("/api/tasks", json={"title": "Write README", "assignee":"Ramneek"}).json()
     task_id = created["id"]
     assert created["status"] == "TODO"
     assert created["priority"] == "MEDIUM"

@@ -1,12 +1,12 @@
 # CI/CD & GitHub Actions: Homework (Session 16)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 
 > All output below is copied from the real workflow run on this repository.
 > Workflow: [`.github/workflows/hw16-ci.yml`](../../.github/workflows/hw16-ci.yml) · App: [`app/`](app/) · Tests: [`tests/`](tests/)
-> Run: <https://github.com/Talin12/devops-heros/actions/runs/37624243938>
+> Run: <https://github.com/ramneek3/devops-homework3/actions/runs/37624243938>
 
 ---
 
@@ -77,7 +77,7 @@ can always be traced back to the exact commit that produced it.
 
 ```console
 No common sensitive files found.
-authenticated API call OK - repo: Talin12/devops-heros, visibility: public
+authenticated API call OK - repo: ramneek3/devops-homework3, visibility: public
 ```
 
 `GITHUB_TOKEN` is a secret GitHub creates fresh for every run and revokes when the run ends. It is

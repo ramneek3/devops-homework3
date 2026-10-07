@@ -1,8 +1,8 @@
 # Docker Fundamentals: Homework (Sessions 6-7)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 
 **Task:** create Hello World web applications with Docker for Node.js, Python, Java, Apache, React and Nginx - each in its own folder, each with its own Dockerfile, each built, run and verified in a browser.
 
@@ -84,7 +84,7 @@ app.get("/", (req, res) => {
   <body style="font-family:sans-serif;text-align:center;padding-top:80px">
     <h1>Hello World from Node.js + Express </h1>
     <p>Served from inside a Docker container</p>
-    <p>Talin Daga | 24BCS10321</p>
+    <p>Ramneek Singh | 24BCS10141</p>
   </body>
 </html>`);
 });
@@ -137,7 +137,7 @@ def hello():
   <body style="font-family:sans-serif;text-align:center;padding-top:80px">
     <h1>Hello World from Python + Flask </h1>
     <p>Served from inside a Docker container</p>
-    <p>Talin Daga | 24BCS10321</p>
+    <p>Ramneek Singh | 24BCS10141</p>
   </body>
 </html>"""
 
@@ -191,7 +191,7 @@ public class HelloServer {
                     + "<body style=\"font-family:sans-serif;text-align:center;padding-top:80px\">"
                     + "<h1>Hello World from Java </h1>"
                     + "<p>Served from inside a Docker container</p>"
-                    + "<p>Talin Daga | 24BCS10321</p>"
+                    + "<p>Ramneek Singh | 24BCS10141</p>"
                     + "</body></html>";
             byte[] body = html.getBytes(StandardCharsets.UTF_8);
             exchange.getResponseHeaders().set("Content-Type", "text/html; charset=utf-8");
@@ -269,7 +269,7 @@ export default function App() {
     <div style={{ fontFamily: "sans-serif", textAlign: "center", paddingTop: 80 }}>
       <h1>Hello World from React ⚛️</h1>
       <p>Built with Vite, served from inside a Docker container via Nginx</p>
-      <p>Talin Daga | 24BCS10321</p>
+      <p>Ramneek Singh | 24BCS10141</p>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 # Kubernetes Troubleshooting: Homework (Session 14)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 
 > Every command below was actually executed and the output pasted verbatim.
 > Broken manifests: [`session-14-kubernetes-troubleshooting/`](../../session-14-kubernetes-troubleshooting/) · My fixes: [`fixes/`](fixes/)

@@ -1,8 +1,8 @@
 # Dockerfiles & Images: Multi-Stage Build Homework (Sessions 6-7)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 **Date:** 03 September 2026
 
 > Every command below was actually executed and the output pasted verbatim.
@@ -16,7 +16,7 @@ The repository containing the multi-stage Dockerfile is this one. It lives at
 
 ```bash
 # 1. clone the repository
-git clone https://github.com/Talin12/devops-heros.git
+git clone https://github.com/ramneek3/devops-homework3.git
 cd devops-heros
 
 # 2. build the image from the multi-stage Dockerfile
@@ -205,9 +205,9 @@ node                                   194MB
 
 | | |
 |---|---|
-| Name | Talin Daga |
-| Enrollment No. | 24BCS10321 |
-| Email | talin.24bcs10321@sst.scaler.com |
+| Name | Ramneek Singh |
+| Enrollment No. | 24BCS10141 |
+| Email | ramneek.24bcs10141@sst.scaler.com |
 | Image | `multi-stage-app` |
 | Container | `hw-multistage` |
 | Port | host 8080 -> container 3000 |

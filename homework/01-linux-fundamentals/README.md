@@ -1,8 +1,8 @@
 # Linux Fundamentals: Homework (Session 2)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 
 > Every command below was actually executed on Ubuntu 22.04 LTS and the output pasted verbatim.
 
@@ -653,10 +653,10 @@ demo/project/logs
 demo/b.txt
 demo/c.log
 
-$ echo 'DevOps Hero - Talin Daga' > demo/a.txt
+$ echo 'DevOps Hero - Ramneek Singh' > demo/a.txt
 
 $ cat demo/a.txt
-DevOps Hero - Talin Daga
+DevOps Hero - Ramneek Singh
 
 $ cp demo/a.txt demo/a_copy.txt && ls demo
 a.txt
@@ -700,16 +700,16 @@ $ wc -l demo/numbers.txt
 20 demo/numbers.txt
 
 $ cat -n demo/a.txt
-     1	DevOps Hero - Talin Daga
+     1	DevOps Hero - Ramneek Singh
 
 ===== D. Searching =====
 
 $ grep -n 'DevOps' demo/a.txt
-1:DevOps Hero - Talin Daga
+1:DevOps Hero - Ramneek Singh
 
 $ grep -rn 'Hero' demo/
-demo/a.txt:1:DevOps Hero - Talin Daga
-demo/a_copy.txt:1:DevOps Hero - Talin Daga
+demo/a.txt:1:DevOps Hero - Ramneek Singh
+demo/a_copy.txt:1:DevOps Hero - Ramneek Singh
 
 $ find / -name 'passwd' -maxdepth 3 2>/dev/null
 /usr/bin/passwd
@@ -842,7 +842,7 @@ sys has UID 3
 sync has UID 4
 
 $ sed 's/DevOps/CloudOps/' demo/a.txt
-CloudOps Hero - Talin Daga
+CloudOps Hero - Ramneek Singh
 
 $ echo 'apple banana apple cherry banana apple' | tr ' ' '\n' | sort | uniq -c | sort -nr
       3 apple

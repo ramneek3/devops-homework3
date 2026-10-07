@@ -1,9 +1,9 @@
-# DevOps Homework: Talin Daga
+# DevOps Homework: Ramneek Singh
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
-**Repository:** <https://github.com/Talin12/devops-heros>
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
+**Repository:** <https://github.com/ramneek3/devops-homework3>
 
 All homework from the DevOps Heroes sessions, one folder per topic. Every command in every
 README was actually executed and the output pasted verbatim - no invented output.

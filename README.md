@@ -3,7 +3,7 @@
 Fork of the DevOps Heroes session repository, with my completed homework added under
 [`homework/`](homework/).
 
-Talin Daga · Enrollment No. 24BCS10321 · talin.24bcs10321@sst.scaler.com
+Ramneek Singh · Enrollment No. 24BCS10141 · ramneek.24bcs10141@sst.scaler.com
 
 ---
 

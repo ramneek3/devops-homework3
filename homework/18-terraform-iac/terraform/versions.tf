@@ -15,7 +15,7 @@ provider "aws" {
   default_tags {
     tags = {
       ManagedBy = "Terraform"
-      Owner     = "talin-daga"
+      Owner     = "ramneek-singh"
     }
   }
 }

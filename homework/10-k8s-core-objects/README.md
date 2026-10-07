@@ -1,8 +1,8 @@
 # Kubernetes Pods, ReplicaSets & Deployments: Homework (Session 10)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 
 > Every command below was actually executed and the output pasted verbatim.
 > Manifests: [`session10-k8s-core-objects/`](../../session10-k8s-core-objects/)

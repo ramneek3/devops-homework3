@@ -1,12 +1,12 @@
 # Complete CI/CD & DevSecOps: Homework (Session 17)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 
 > All output below is copied from real workflow runs on this repository.
 > Workflow: [`.github/workflows/hw17-devsecops.yml`](../../.github/workflows/hw17-devsecops.yml) · App: [`app/`](app/) · [`Dockerfile`](Dockerfile) · [`k8s/`](k8s/)
-> Blocked run: <https://github.com/Talin12/devops-heros/actions/runs/37624244016> · Green run: <https://github.com/Talin12/devops-heros/actions/runs/37625195630>
+> Blocked run: <https://github.com/ramneek3/devops-homework3/actions/runs/37624244016> · Green run: <https://github.com/ramneek3/devops-homework3/actions/runs/37625195630>
 
 ---
 
@@ -28,7 +28,7 @@
 
 | Session topic | Implementation |
 |---|---|
-| Container registry | GitHub Container Registry, `ghcr.io/talin12/devops-heros-hw17`, pushed with `GITHUB_TOKEN` |
+| Container registry | GitHub Container Registry, `ghcr.io/ramneek3/devops-homework3-hw17`, pushed with `GITHUB_TOKEN` |
 | Kubernetes deployment | kind cluster in the runner, image side-loaded, `kubectl rollout status` + curl |
 | SAST | **Bandit**, gate on HIGH severity |
 | SCA | **pip-audit** against `requirements.txt` |
@@ -135,7 +135,7 @@ uid=10001(appuser) gid=10001(appuser) groups=10001(appuser)
 ```
 
 ```console
-ghcr.io/talin12/devops-heros-hw17:5d7c1801593ef55ec8009210347b0538b45a6f35 (debian 13.7)
+ghcr.io/ramneek3/devops-homework3-hw17:5d7c1801593ef55ec8009210347b0538b45a6f35 (debian 13.7)
 ========================================================================================
 Total: 44 (HIGH: 44, CRITICAL: 0)
 ┌───────────────┬────────────────┬──────────┬──────────────┬───────────────────────────────────┬───────────────┬─────────────────────────────────────────────────────────────┐
@@ -164,7 +164,7 @@ Same digest for both tags. `latest` is just a second name for the commit-SHA ima
 ### Deploy + smoke test
 
 ```console
-Status: Downloaded newer image for ghcr.io/talin12/devops-heros-hw17:5d7c1801593ef55ec8009210347b0538b45a6f35
+Status: Downloaded newer image for ghcr.io/ramneek3/devops-homework3-hw17:5d7c1801593ef55ec8009210347b0538b45a6f35
 deployment "session17-python" successfully rolled out
 session17-python-7f88b8b79c-4gp2s   1/1     Running   0          1s    10.244.0.5   chart-testing-control-plane   <none>           <none>
 session17-python-7f88b8b79c-7dzxh   1/1     Running   0          1s    10.244.0.6   chart-testing-control-plane   <none>           <none>

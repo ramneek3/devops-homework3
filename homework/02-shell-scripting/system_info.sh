@@ -2,7 +2,7 @@
 # ---------------------------------------------------------------
 # System Information Script
 # Session 3 - Shell Scripting Homework
-# Author : Talin Daga
+# Author : Ramneek Singh
 # ---------------------------------------------------------------
 # Demonstrates: variables, read -p, mkdir, touch, echo, date,
 #               hostname, whoami, df, ps and > output redirection

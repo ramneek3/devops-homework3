@@ -1,8 +1,8 @@
 # Docker Networking & Volumes: Homework (Session 8)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 
 > Every command below was actually executed and the output pasted verbatim.
 
@@ -377,19 +377,19 @@ curl http://localhost:8084                     # -> the new content, instantly
 
 ===== Step 1: create a folder on the local machine =====
 
-$ mkdir -p /Users/talindaga/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo && cd /Users/talindaga/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo && pwd
-/Users/talindaga/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo
+$ mkdir -p /Users/ramneeksingh/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo && cd /Users/ramneeksingh/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo && pwd
+/Users/ramneeksingh/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo
 
 ===== Step 2: create index.html with 'Hello students' =====
 
-$ echo '<h1>Hello students</h1>' > /Users/talindaga/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo/index.html
+$ echo '<h1>Hello students</h1>' > /Users/ramneeksingh/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo/index.html
 
-$ cat /Users/talindaga/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo/index.html
+$ cat /Users/ramneeksingh/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo/index.html
 <h1>Hello students</h1>
 
 ===== Step 3: bind mount that folder into an Nginx container =====
 
-$ docker run -d --name hw-bindmount -p 8084:80 -v /Users/talindaga/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo:/usr/share/nginx/html:ro nginx:alpine
+$ docker run -d --name hw-bindmount -p 8084:80 -v /Users/ramneeksingh/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo:/usr/share/nginx/html:ro nginx:alpine
 3507af5dff78229c6e13cbbd089918158cae74ed2c5e2b3755c0f58574b064e9
 
 $ docker ps --filter name=hw-bindmount --format 'table {{.Names}}	{{.Status}}	{{.Ports}}'
@@ -397,7 +397,7 @@ NAMES          STATUS         PORTS
 hw-bindmount   Up 3 seconds   0.0.0.0:8084->80/tcp, [::]:8084->80/tcp
 
 $ docker inspect hw-bindmount --format '{{range .Mounts}}Type={{.Type}}  Source={{.Source}}  Destination={{.Destination}}  RW={{.RW}}{{end}}'
-Type=bind  Source=/Users/talindaga/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo  Destination=/usr/share/nginx/html  RW=false
+Type=bind  Source=/Users/ramneeksingh/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo  Destination=/usr/share/nginx/html  RW=false
 
 ===== Step 4: access the Nginx website and verify the content =====
 
@@ -413,9 +413,9 @@ $ docker exec hw-bindmount cat /usr/share/nginx/html/index.html
 
 ===== Step 5: MODIFY the file on the host (container NOT restarted) =====
 
-$ echo '<h1>Hello students - file was edited on the HOST at '"$(date +%H:%M:%S)"'</h1>' > /Users/talindaga/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo/index.html
+$ echo '<h1>Hello students - file was edited on the HOST at '"$(date +%H:%M:%S)"'</h1>' > /Users/ramneeksingh/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo/index.html
 
-$ cat /Users/talindaga/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo/index.html
+$ cat /Users/ramneeksingh/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo/index.html
 <h1>Hello students - file was edited on the HOST at 15:04:24</h1>
 
 ===== Step 6: re-request the page - change is live instantly =====
@@ -428,7 +428,7 @@ hw-bindmount -> Up 3 seconds   (never restarted)
 
 ===== Step 7: add a NEW file on the host, instantly served too =====
 
-$ echo '<h1>Second page created on the host</h1>' > /Users/talindaga/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo/page2.html
+$ echo '<h1>Second page created on the host</h1>' > /Users/ramneeksingh/Desktop/Desktop/devops-heros/homework/07-docker-networking-volumes/bind-mount-demo/page2.html
 
 $ curl -s http://localhost:8084/page2.html
 <h1>Second page created on the host</h1>

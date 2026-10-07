@@ -14,7 +14,7 @@ on:
 
 env:
   APP_DIR: homework/17-devsecops
-  IMAGE: ghcr.io/talin12/devops-heros-hw17
+  IMAGE: ghcr.io/ramneek3/devops-homework3-hw17
 
 defaults:
   run:

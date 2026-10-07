@@ -13,8 +13,8 @@ on:
   workflow_dispatch:
 
 env:
-  BACKEND_IMAGE: ghcr.io/talin12/taskboard-backend
-  FRONTEND_IMAGE: ghcr.io/talin12/taskboard-frontend
+  BACKEND_IMAGE: ghcr.io/ramneek3/taskboard-backend
+  FRONTEND_IMAGE: ghcr.io/ramneek3/taskboard-frontend
 
 defaults:
   run:

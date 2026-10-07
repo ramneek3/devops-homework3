@@ -1,13 +1,13 @@
 # Final DevOps Project & Troubleshooting: TaskBoard Capstone (Session 21)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 
 > Every command below was actually executed and the output pasted verbatim; pipeline output is
 > copied from real GitHub Actions runs. Screenshots are real browser captures.
 > Pipeline: [`.github/workflows/hw21-ci-cd.yml`](../../.github/workflows/hw21-ci-cd.yml) ·
-> Green run: <https://github.com/Talin12/devops-heros/actions/runs/37629139375>
+> Green run: <https://github.com/ramneek3/devops-homework3/actions/runs/37629139375>
 
 A three-tier task board: **React (Vite) + Nginx** frontend, **FastAPI** backend, **PostgreSQL**
 with **Alembic** migrations. It is tested, containerised, scanned, published to GHCR, deployed with
@@ -88,11 +88,11 @@ backend-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to q
 $ curl -s localhost:8000/health; echo
 {"status":"UP"}
 
-$ curl -s -X POST localhost:8000/api/tasks -H 'Content-Type: application/json' -d '{"title":"Provision EKS with Terraform","priority":"HIGH","assignee":"Talin"}'; echo
-{"title":"Provision EKS with Terraform","description":"","priority":"HIGH","status":"TODO","assignee":"Talin","id":1,"created_at":"2026-10-07T13:14:14.249435Z"}
+$ curl -s -X POST localhost:8000/api/tasks -H 'Content-Type: application/json' -d '{"title":"Provision EKS with Terraform","priority":"HIGH","assignee":"Ramneek"}'; echo
+{"title":"Provision EKS with Terraform","description":"","priority":"HIGH","status":"TODO","assignee":"Ramneek","id":1,"created_at":"2026-10-07T13:14:14.249435Z"}
 
 $ curl -s -X PUT localhost:8000/api/tasks/1 -H 'Content-Type: application/json' -d '{"status":"IN_PROGRESS"}'; echo
-{"title":"Provision EKS with Terraform","description":"","priority":"HIGH","status":"IN_PROGRESS","assignee":"Talin","id":1,"created_at":"2026-10-07T13:14:14.249435Z"}
+{"title":"Provision EKS with Terraform","description":"","priority":"HIGH","status":"IN_PROGRESS","assignee":"Ramneek","id":1,"created_at":"2026-10-07T13:14:14.249435Z"}
 
 $ curl -s -X POST localhost:8000/api/tasks -H 'Content-Type: application/json' -d '{"title":"temp"}' >/dev/null; curl -s -o /dev/null -w 'DELETE /api/tasks/4 -> %{http_code}\n' -X DELETE localhost:8000/api/tasks/4
 DELETE /api/tasks/4 -> 204
@@ -172,7 +172,7 @@ tests/test_api.py::test_metrics_endpoint_exposes_prometheus_format PASSED [100%]
 Commit history for this homework repository (my commits only, newest first):
 
 ```console
-$ git log --author="Talin Daga" --no-merges --format='%h %ad %s' --date=short
+$ git log --author="Ramneek Singh" --no-merges --format='%h %ad %s' --date=short
 40a060b 2026-10-07 Session 21: patch frontend base image, rewrite Terraform as valid HCL
 c934521 2026-10-07 Session 21: upgrade FastAPI/Starlette to clear Trivy HIGH CVEs, wait for Postgres in Helm
 51ef14e 2026-10-07 Session 21: TaskBoard capstone with CI/CD, fixed compose race, Helm chart and test suite
@@ -209,7 +209,7 @@ Three jobs on every push to `main` that touches this folder:
 40a060bd307f7ca1adc9e2c84a241bf1d27760c3: digest: sha256:61ddd56342011a6a4c2687b0ee0f83095bfb131d40b975c1ff5e71dfe789ed8a size: 2823
 ```
 
-Images: `ghcr.io/talin12/taskboard-backend:40a060b…` and `ghcr.io/talin12/taskboard-frontend:40a060b…`,
+Images: `ghcr.io/ramneek3/taskboard-backend:40a060b…` and `ghcr.io/ramneek3/taskboard-frontend:40a060b…`,
 pushed with the run's own `GITHUB_TOKEN`, so no registry password is stored anywhere. Tags are
 the **full commit SHA**, never `latest`.
 
@@ -239,7 +239,7 @@ pod/taskboard-taskboard-backend-86b69759d6-rwqqb   1/1     Running   0          
 The gate is `trivy image --severity HIGH,CRITICAL --ignore-unfixed --exit-code 1` on **both**
 images. It fails the build on any HIGH or CRITICAL CVE **that has a fix available**.
 
-**Run 1, backend blocked** ([run 37627572154](https://github.com/Talin12/devops-heros/actions/runs/37627572154)):
+**Run 1, backend blocked** ([run 37627572154](https://github.com/ramneek3/devops-homework3/actions/runs/37627572154)):
 
 ![Trivy gate blocked run 1](screenshots/04-ci-trivy-gate-blocked.png)
 
@@ -261,7 +261,7 @@ version (1.3.1). All 9 tests still passed.
 **Run 2, frontend blocked:** with the backend now clean, the frontend failed:
 
 ```console
-ghcr.io/talin12/taskboard-frontend:c934521c9723305cb90998232b7f10cc6ad174d1 (alpine 3.21.3)
+ghcr.io/ramneek3/taskboard-frontend:c934521c9723305cb90998232b7f10cc6ad174d1 (alpine 3.21.3)
 Total: 42 (HIGH: 40, CRITICAL: 2)
 │ c-ares       │ CVE-2026-33630 │ HIGH     │ fixed  │ 1.34.5-r0         │ 1.34.8-r0     │ c-ares: c-ares: Use-after-free / double-free in              │
 │ libcrypto3   │ CVE-2026-31789 │ CRITICAL │        │ 3.3.3-r0          │ 3.3.7-r0      │ openssl: OpenSSL: Heap buffer overflow on 32-bit systems     │
@@ -286,8 +286,8 @@ libexpat-2.8.5-r0
 **Run 3, clean:**
 
 ```console
-│ ghcr.io/talin12/taskboard-backend:40a060bd307f7ca1adc9e2c84a241bf1d27760c3       │   debian   │        0        │    -    │
-│ ghcr.io/talin12/taskboard-frontend:40a060bd307f7ca1adc9e2c84a241bf1d27760c3 │ alpine │        0        │    -    │
+│ ghcr.io/ramneek3/taskboard-backend:40a060bd307f7ca1adc9e2c84a241bf1d27760c3       │   debian   │        0        │    -    │
+│ ghcr.io/ramneek3/taskboard-frontend:40a060bd307f7ca1adc9e2c84a241bf1d27760c3 │ alpine │        0        │    -    │
 ```
 
 **What Trivy scanned:** the OS packages of each image (Debian 13.7 for the backend, Alpine for the
@@ -473,8 +473,8 @@ On macOS the minikube node IP isn't reachable from the host, so I port-forwarded
 controller to `localhost:8088` and sent the `taskboard.local` Host header:
 
 ```console
-$ curl -s -H 'Host: taskboard.local' -X POST http://localhost:8088/api/tasks -H 'Content-Type: application/json' -d '{"title":"Deployed by Helm on minikube","priority":"HIGH","assignee":"Talin"}'; echo
-{"title":"Deployed by Helm on minikube","description":"","priority":"HIGH","status":"TODO","assignee":"Talin","id":1,"created_at":"2026-10-07T13:22:02.477473Z"}
+$ curl -s -H 'Host: taskboard.local' -X POST http://localhost:8088/api/tasks -H 'Content-Type: application/json' -d '{"title":"Deployed by Helm on minikube","priority":"HIGH","assignee":"Ramneek"}'; echo
+{"title":"Deployed by Helm on minikube","description":"","priority":"HIGH","status":"TODO","assignee":"Ramneek","id":1,"created_at":"2026-10-07T13:22:02.477473Z"}
 
 $ curl -s -H 'Host: taskboard.local' http://localhost:8088/api/tasks/stats; echo
 {"total":2,"todo":1,"inProgress":0,"done":1}

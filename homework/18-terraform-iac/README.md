@@ -1,8 +1,8 @@
 # Terraform & Infrastructure as Code: Homework (Session 18)
 
-**Name:** Talin Daga
-**Enrollment No.:** 24BCS10321
-**Email:** talin.24bcs10321@sst.scaler.com
+**Name:** Ramneek Singh
+**Enrollment No.:** 24BCS10141
+**Email:** ramneek.24bcs10141@sst.scaler.com
 
 > Every command below was actually executed and the output pasted verbatim.
 > My config: [`terraform/`](terraform/) · Session labs: [`session18-terraform-iac/`](../../session18-terraform-iac/)
@@ -122,7 +122,7 @@ Terraform will perform the following actions:
           + "Environment" = "dev"
           + "ManagedBy"   = "Terraform"
           + "Name"        = "session18-dev"
-          + "Owner"       = "talin-daga"
+          + "Owner"       = "ramneek-singh"
         }
       ...
     }

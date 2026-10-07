@@ -157,7 +157,7 @@ resource "aws_instance" "web" {
   user_data = <<-EOT
     #!/bin/bash
     yum install -y httpd
-    echo "<h1>Hello from ${var.name} - Talin Daga</h1>" > /var/www/html/index.html
+    echo "<h1>Hello from ${var.name} - Ramneek Singh</h1>" > /var/www/html/index.html
     systemctl enable --now httpd
   EOT
 
